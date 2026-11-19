@@ -62,3 +62,24 @@ Git 是分布式的版本控制软件，能记住项目每次改动，随时回�
 ![解决后](assets/merge-ok.png)
 
 最后 `git log --oneline --graph --all` 能看到两条线汇到一个 merge 提交，那一刻才真的看懂"分支只是指针、合并是接线"。
+
+### 3. 克隆仓库、拉取更新
+
+把仓库克隆到旁边一个新文件夹，在副本里改 README 底部加一行，提交并推上去；再回到原目录 `git pull`，那行就同步回来了。
+
+```powershell
+git clone https://github.com/mianbao721/learn-note.git learn-note-clone
+# 改 README 末尾一行
+git commit -am "docs: 从 clone 的副本提交一次"
+git push
+cd ..\learn-note
+git pull          # 输出 Fast-forward
+```
+
+拉完 `git log --oneline -3` 第一条是：
+
+```
+20fa900 (HEAD -> main, origin/main, origin/HEAD) docs: 从 clone 的副本提交一次
+```
+
+三个标签挤在一行，说明本地 main、远端 main、远端默认分支都指向同一次提交——完全同步。以前不懂 `origin/main` 是啥，现在明白它就是"远端 main 在本地的影子"，`pull` 完两个指针重合，所以并列显示。
