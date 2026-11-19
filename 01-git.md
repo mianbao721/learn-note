@@ -45,22 +45,20 @@ Git 是分布式的版本控制软件，能记住项目每次改动，随时回�
 
 ### 1. 开分支、改、合并
 
-```bash
-git switch -c feature/test
-# 改 README 一行
-git commit -am "docs: 测试分支"
-git switch main
-git merge feature/test
-git log --oneline --graph
-```
+在 city-list 上开 `feature/test`，改 README 标题，切回 main 再 merge。这次是**快进合并**：main 没有新提交，指针直接挪过去，不会产生新的合并提交。
 
-（待补：`git log --graph` 截图 + 一句话感受）
+![分支合并历史](assets/graph.png)
 
 ### 2. 制造并解决一次冲突
 
-（待补：冲突标记 `<<<<<<<` 的截图）
+再开 `feature/conflict` 和 main 各改同一行标题，merge 时直接报 `CONFLICT`。
 
-- 我以为：
-- 实际是：
-- 我怎么判断留哪一边：
-- 结果：
+我原以为 Git 会自动挑一个留下，实际是把两边的内容都写进文件，用 `<<<<<<<`、`=======`、`>>>>>>>` 标出来让我决定——它不猜，只负责把矛盾摆到脸上。
+
+![冲突标记](assets/conflict.png)
+
+解决方式：删掉三行标记，只留一行标题（我最后留的是 `# 我的城市清单`），保存后 `git add` + `git commit`。
+
+![解决后](assets/merge-ok.png)
+
+最后 `git log --oneline --graph --all` 能看到两条线汇到一个 merge 提交，那一刻才真的看懂"分支只是指针、合并是接线"。
