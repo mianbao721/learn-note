@@ -82,4 +82,6 @@ git pull          # 输出 Fast-forward
 20fa900 (HEAD -> main, origin/main, origin/HEAD) docs: 从 clone 的副本提交一次
 ```
 
+![克隆与拉取后的提交记录](assets/pull-log.png)
+
 三个标签挤在一行，说明本地 main、远端 main、远端默认分支都指向同一次提交——完全同步。以前不懂 `origin/main` 是啥，现在明白它就是"远端 main 在本地的影子"，`pull` 完两个指针重合，所以并列显示。
