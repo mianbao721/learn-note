@@ -27,11 +27,15 @@
 
 | 关键词 | 资源 | 解决什么 | 值得借鉴的点 | 用了吗 |
 |---|---|---|---|---|
-| `vanilla js practice projects` | [wesbos/JavaScript30](https://github.com/wesbos/JavaScript30) | 30 个纯原生 JS 小练习 | 不引框架怎么组织事件与状态；每个项目一个文件夹，结构很干净 | 看了 3 个 |
+| `vanilla js practice projects` | [wesbos/JavaScript30](https://github.com/wesbos/JavaScript30) | 30 个纯原生 JS 小练习 | 不引框架怎么组织事件与状态；每个项目一个文件夹，结构很干净 | 跑了第 1 个 |
 | `awesome javascript list` | [sindresorhus/awesome](https://github.com/sindresorhus/awesome) | 各类资源的总索引 | 想找某个方向的库，先来这里按分类翻，比乱搜快 | 用过 |
 | `leaflet 轻量地图` | [Leaflet/Leaflet](https://github.com/Leaflet/Leaflet) | 在网页里嵌地图 | 如果二期要在地图上标点，它比整套地图 SDK 轻得多 | 未用（备选） |
 
 > 判断一个开源项目值不值得用，我只看三件事：最近一次提交是不是半年前以后、Issues 里有没有人回、license 能不能商用。三条缺一条就换。
+
+**第一个例子跑通了**（鼓机）：九个方块对应九个音效，HTML 用 `data-key` 把按键和音频配对，JS 只做三件事——监听 `keydown`、按 keyCode 找到对应 `<audio>`、加 `.playing` 类让 CSS 闪一下。
+
+就这 20 行，把"**数据挂在 DOM 上**"这个思路讲透了：不用记数组下标，元素自己带着身份。以后做城市卡片，也可以给每张卡挂 `data-id`，点击时直接读出来。
 
 ## 三、Agent 扩展
 
