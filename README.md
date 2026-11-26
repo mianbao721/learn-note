@@ -10,6 +10,7 @@
 | [02-git-核心概念.md](02-git-核心概念.md) | Git 与 GitHub 核心概念：四区、提交、分支、协作流程 |
 | [03-agent.md](03-agent.md) | AI Agent 学习笔记：LLM→Token→Context→Tool→MCP→Agent→Skill |
 | [04-tools.md](04-tools.md) | 检索资料与开发工具：开源项目、Agent 扩展、开发工具及试用记录 |
+| [skills/城市卡片助手/SKILL.md](skills/城市卡片助手/SKILL.md) | 自己写的第一个 Skill：城市卡片的固定结构与判断规则 |
 
 ## 实操证据
 
