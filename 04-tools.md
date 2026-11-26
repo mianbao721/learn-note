@@ -34,7 +34,7 @@
 
 > 判断一个开源项目值不值得用，我只看三件事：最近一次提交是不是近半年、Issues 里有没有人回、license 能不能商用。三条缺一条就换。
 
-**唯一真跑过的：JavaScript30 的鼓机。**
+**开源项目里唯一真跑过的：JavaScript30 的鼓机。**
 
 九个方块对应九个音效，HTML 用 `data-key` 把按键和音频配对，JS 只做三件事——监听 `keydown`、按 keyCode 找到对应 `<audio>`、加 `.playing` 类让 CSS 闪一下。
 
